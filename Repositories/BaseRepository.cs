@@ -17,7 +17,6 @@ namespace codetest.Repositories
         protected IMongoCollection<T> MongoCollection { get; set; }
 
         protected IMongoDatabase MongoDatabase { get; set; }
-        private readonly ILogger _logger = new LoggerConfiguration().CreateLogger();
 
         public BaseRepository(IDbBuilder builder)
         {
@@ -30,7 +29,7 @@ namespace codetest.Repositories
             GetDatabase();
             GetCollection();
             if (MongoCollection == null) return;
-            _logger.Debug("Creating mongo index");
+            Log.Debug("Creating mongo index");
             CreateIndex();
         }
 
@@ -44,7 +43,7 @@ namespace codetest.Repositories
         {
             var type = typeof(T);
             if (MongoCollection != null) return;
-            _logger.Debug($"Getting mongocollection {typeof(T)}");
+            Log.Debug($"Getting mongocollection {typeof(T)}");
             MongoCollection = MongoDatabase.GetCollection<T>(type.Name);
         }
 
@@ -169,16 +168,22 @@ namespace codetest.Repositories
 
         public async Task ReplaceOne(T entity, T newValue)
         {
-            var now = System.DateTime.Now;
-            newValue.ModifiedAt = now;
             try
             {
-                await MongoCollection.ReplaceOneAsync(Builders<T>.Filter.Eq(e => e.Id, entity.Id), newValue);
+                var update = Builders<T>.Update
+                            .Set(x => x.ModifiedAt, DateTime.UtcNow)
+                            .Set(x => x.Name, newValue.Name)
+                            .Set(x => x.UserName, newValue.UserName)
+                            .Set(x => x.PhoneNumber, newValue.PhoneNumber)
+                            .Set(x => x.Email, newValue.Email)
+                            .Set(x => x.Address, newValue.Address);
+
+                await MongoCollection.UpdateOneAsync(FilterId(entity.Id), update);
             }
             catch (Exception exception)
             {
-                _logger.Error($"Error creating index {typeof(T)}");
-                _logger.Error(exception.StackTrace);
+                Log.Error($"Error creating index {typeof(T)}");
+                Log.Error(exception.StackTrace);
             }
         }
 
@@ -189,12 +194,20 @@ namespace codetest.Repositories
 
             try
             {
-                await MongoCollection.ReplaceOneAsync(filter, newValue);
+                var update = Builders<T>.Update
+                            .Set(x => x.ModifiedAt, DateTime.UtcNow)
+                            .Set(x => x.Name, newValue.Name)
+                            .Set(x => x.UserName, newValue.UserName)
+                            .Set(x => x.PhoneNumber, newValue.PhoneNumber)
+                            .Set(x => x.Email, newValue.Email)
+                            .Set(x => x.Address, newValue.Address);
+
+                await MongoCollection.UpdateOneAsync(filter, update);
             }
             catch (Exception exception)
             {
-                _logger.Error($"Error creating index {typeof(T)}");
-                _logger.Error(exception.StackTrace);
+                Log.Error($"Error creating index {typeof(T)}");
+                Log.Error(exception.StackTrace);
             }
         }
 
@@ -205,14 +218,23 @@ namespace codetest.Repositories
 
             try
             {
-                MongoCollection.ReplaceOne(FilterId(id), newValue);
+                var update = Builders<T>.Update
+                            .Set(x => x.ModifiedAt, DateTime.UtcNow)
+                            .Set(x => x.Name, newValue.Name)
+                            .Set(x => x.UserName, newValue.UserName)
+                            .Set(x => x.PhoneNumber, newValue.PhoneNumber)
+                            .Set(x => x.Email, newValue.Email)
+                            .Set(x => x.Address, newValue.Address);
+
+                MongoCollection.UpdateOne(FilterId(id), update);
             }
             catch (Exception exception)
             {
-                _logger.Error($"Error creating index {typeof(T)}");
-                _logger.Error(exception.StackTrace);
+                Log.Error($"Error creating index {typeof(T)}");
+                Log.Error(exception.StackTrace);
             }
         }
+
         public void ReplaceOneSync(Expression<Func<T, bool>> filter, T newValue)
         {
             var now = System.DateTime.Now;
@@ -220,12 +242,20 @@ namespace codetest.Repositories
 
             try
             {
-                MongoCollection.ReplaceOne(filter, newValue);
+                var update = Builders<T>.Update
+                            .Set(x => x.ModifiedAt, DateTime.UtcNow)
+                            .Set(x => x.Name, newValue.Name)
+                            .Set(x => x.UserName, newValue.UserName)
+                            .Set(x => x.PhoneNumber, newValue.PhoneNumber)
+                            .Set(x => x.Email, newValue.Email)
+                            .Set(x => x.Address, newValue.Address);
+
+                MongoCollection.UpdateOne(filter, update);
             }
             catch (Exception exception)
             {
-                _logger.Error($"Error creating index {typeof(T)}");
-                _logger.Error(exception.StackTrace);
+                Log.Error($"Error creating index {typeof(T)}");
+                Log.Error(exception.StackTrace);
             }
         }
 

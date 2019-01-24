@@ -38,7 +38,6 @@ namespace codetest.Models
         [BsonIgnoreIfNull]
         [DataType(DataType.PhoneNumber)]
         [Display(Name = "Telefon nummer")]
-        [RegularExpression(@"^(0045|\+45)?\?[2-9][0-9]\?[1-9][0-9]\?([0-9]\?){4}$", ErrorMessage = "Ikke et gyldigt telefonnummer")]
         public string PhoneNumber { get; set; }
 
         [BsonIgnoreIfDefault]

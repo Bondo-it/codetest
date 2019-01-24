@@ -38,7 +38,7 @@ gulp.task('ts', gulp.series(() => {
     .pipe(sourcemaps.init({
       loadMaps: true
     }))
-    .pipe(uglify())
+    //.pipe(uglify())
     .on('error', (err) => {
       console.log(err.message);
       console.log(err.annotated);

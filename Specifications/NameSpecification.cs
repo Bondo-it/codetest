@@ -7,7 +7,7 @@ namespace codetest.Specification
     public class NameSpecification : CompositeSpecification<string>
     {
         public static Regex _nameRegex = new Regex(
-                "^(\\b[A-Za-z]*\\b\\s+\\b[A-Za-z]*\\b+\\.[A-Za-z])$",
+                @"^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$",
                 RegexOptions.IgnoreCase
                 | RegexOptions.CultureInvariant
                 | RegexOptions.IgnorePatternWhitespace

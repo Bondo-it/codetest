@@ -11,9 +11,12 @@ using codetest.Utilities;
 using codetest.Models.ViewModels;
 using System.Linq.Expressions;
 using codetest.MongoDB;
+using codetest.Specification;
 
 namespace codetest.Controllers.Api
 {
+    [Route("api/[controller]/[action]")]
+    [ApiController]
     public class UserController : Controller
     {
         private readonly BaseRepository<User> _userRepository;
@@ -31,14 +34,24 @@ namespace codetest.Controllers.Api
         }
 
         [HttpPut]
-        public JsonResult Add(User user)
+        public JsonResult Add([FromBody]User user)
         {
+            if (!new UserSpecification().IsSatisfiedBy(user))
+            {
+                throw new ArgumentException("User not valid.");
+            }
+            if (_userRepository.AnySync(x =>
+                x.Email == user.Email ||
+                x.UserName == user.UserName))
+            {
+                throw new ArgumentException("Users email og username allready taken.");
+            }
             _userRepository.AddSync(user);
             return new JsonResult(new { success = true, responseText = "User successfuly added!" });
         }
 
         [HttpPatch]
-        public JsonResult Change(string id, User user)
+        public JsonResult Change(string id, [FromBody]User user)
         {
             _userRepository.ReplaceOneSync(id, user);
             return new JsonResult(new { success = true, responseText = "User successfuly modified!" });

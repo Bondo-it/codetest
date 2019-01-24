@@ -1,3 +1,4 @@
+
 [![N|Solid](https://www.luftborn.com/img/logo.svg)](https://www.luftborn.com)
 
 luftborn codetest
@@ -5,9 +6,11 @@ luftborn codetest
 # Before we start
   - Clone repository
   - Run:
-```npm install
-dotnet restore
-gulp ```
+```
+    npm install
+    dotnet restore
+    gulp
+```
 
 # Controllers:
 ## Modal Controller:
@@ -42,3 +45,6 @@ Suggestions could be:
 - Extract your code to classes where a class or a function only have one specifik purpose
 - Only write comments, if code is not self-explainatory(which it should be for the most part)
 - Write your own code, dont import libraries from all over the place. We rate it very highly that you are able to write your own code.
+
+
+

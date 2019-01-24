@@ -6,7 +6,7 @@
 # Before we start
   - Clone repository
   - Run:
-```
+```sh
     submodule update --init --recursive
     npm install
     dotnet restore

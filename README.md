@@ -7,6 +7,7 @@ luftborn codetest
   - Clone repository
   - Run:
 ```
+    submodule update --init --recursive
     npm install
     dotnet restore
     gulp

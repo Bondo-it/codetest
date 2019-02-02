@@ -1,3 +1,0 @@
-[submodule "Scripts/Vendor"]
-	path = Scripts/Vendor
-	url = git@github.com:robinparisi/tingle.git

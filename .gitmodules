@@ -1,3 +1,3 @@
-[submodule "Scripts/Vendor/Scripts/Vendor/tingle"]
-	path = Scripts/Vendor/Scripts/Vendor/tingle
+[submodule "Scripts/Vendor"]
+	path = Scripts/Vendor
 	url = git@github.com:robinparisi/tingle.git

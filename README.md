@@ -7,7 +7,6 @@
   - Clone repository
   - Run:
 ```sh
-    git submodule update --init --recursive
     npm install
     dotnet restore
     gulp

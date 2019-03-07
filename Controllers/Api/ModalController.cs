@@ -25,14 +25,14 @@ namespace codetest.Controllers.Api
         [HttpGet]
         public string Success()
         {
-            string html = view.Render("Modal/success", new { Title = "Success", Message = "" });
+            var html = view.Render("Modal/success", new { Title = "Success", Message = "" });
             return html;
         }
 
         [HttpGet]
         public string Failed()
         {
-            string html = view.Render("Modal/success", new { Title = "Success", Message = "" });
+            var html = view.Render("Modal/success", new { Title = "Success", Message = "" });
             return html;
         }
 
@@ -50,7 +50,7 @@ namespace codetest.Controllers.Api
         {
             var viewPath = string.Format("Modal/{0}", viewType);
 
-            string html = view.Render(viewPath, new { Title = "Success", Message = "" });
+            var html = view.Render(viewPath, new { Title = "Success", Message = "" });
             return html;
         }
     }

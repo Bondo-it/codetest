@@ -13,11 +13,8 @@ const rename = require("gulp-rename");
 const uglify = require("gulp-uglify");
 const sourcemaps = require("gulp-sourcemaps");
 
-const fs = require("fs");
 const path = require("path");
 
-const outFolder = path.join(".", "scripts", "steps");
-const eidWorkerFolder = path.join(".", "scripts", "eidworker");
 
 gulp.task('ts', gulp.series(() => {
   return browserify(path.join('.', 'Scripts', 'main.ts'), {
@@ -46,7 +43,6 @@ gulp.task('ts', gulp.series(() => {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(path.join('.', 'wwwroot', 'js')));
 }));
-
 
 gulp.task("watch", () => {
   gulp.watch(

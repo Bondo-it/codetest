@@ -1,0 +1,2 @@
+DELETE  https://localhost:5001/api/user/delete?id=5c49d3c1db8650416ea98cc2
+Content-Type: application/json; charset=utf-8

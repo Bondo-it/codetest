@@ -1,0 +1,10 @@
+GET https://localhost:5001/api/user/Change?id=5c49d3c1db8650416ea98cc2
+Content-Type: application/json; charset=utf-8
+
+{
+    "name": "Morten Bondo",
+    "userName": "bondo",
+    "email": "morten@luftborn.com",
+    "phoneNumber": "22445922",
+    "address": "kaninhullet 14"
+}

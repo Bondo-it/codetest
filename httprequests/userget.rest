@@ -1,0 +1,13 @@
+GET https://localhost:5001/api/user/Get
+Content-Type: application/json; charset=utf-8
+
+{
+    "name": "Johan Karl",
+    "userName": "Karlus",
+    "email": "Kalius@ninus.com",
+    "phoneNumber": "22446122",
+    "address": "kaninhullet 14",
+    "createdAt": "2019-01-24T15:03:29.892Z",
+    "addedAt": "2019-01-24T15:03:29.892Z",
+    "modifiedAt": "2019-01-24T15:03:29.892Z"
+}

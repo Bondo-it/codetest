@@ -1,13 +1,12 @@
 
 [![N|Solid](https://www.luftborn.com/img/logo.svg)](https://www.luftborn.com)
 
-luftborn codetest
+# Luftborn codetest
 
 # Before we start
   - Clone repository
   - Run:
-```
-    submodule update --init --recursive
+```sh
     npm install
     dotnet restore
     gulp

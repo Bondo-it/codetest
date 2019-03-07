@@ -33,7 +33,7 @@ namespace codetest.Controllers.Api
             return new JsonResult(users);
         }
 
-        [HttpPut]
+        [HttpPost]
         public JsonResult Add([FromBody]User user)
         {
             if (!new UserSpecification().IsSatisfiedBy(user))

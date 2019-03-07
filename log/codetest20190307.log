@@ -23,3 +23,16 @@
 [19:14:46 DBG] Starting web host
 [19:16:41 DBG] Starting web host
 [19:17:02 DBG] Starting web host
+[20:40:08 DBG] Starting web host
+[20:40:13 DBG] Getting mongocollection codetest.Models.User
+[20:40:13 DBG] Creating mongo index
+[20:40:20 DBG] Getting mongocollection codetest.Models.User
+[20:40:20 DBG] Creating mongo index
+[20:40:22 DBG] Getting mongocollection codetest.Models.User
+[20:40:22 DBG] Creating mongo index
+[20:40:23 DBG] Getting mongocollection codetest.Models.User
+[20:40:23 DBG] Creating mongo index
+[20:40:23 DBG] Getting mongocollection codetest.Models.User
+[20:40:23 DBG] Creating mongo index
+[20:40:30 DBG] Getting mongocollection codetest.Models.User
+[20:40:30 DBG] Creating mongo index

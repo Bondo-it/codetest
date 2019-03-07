@@ -1,7 +1,7 @@
 import DomUtil from "./Utilities/DomUtil";
 import UrlUtil from "./Utilities/UrlUtil";
 import HtmlLoader from "./Utilities/HtmlLoader";
-import * as tingle from "./Vendor/tingle/dist/tingle";
+import * as tingle from "tingle.js";
 import MakeRequest from "./Utilities/MakeRequest";
 
 export default class App {

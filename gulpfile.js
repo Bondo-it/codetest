@@ -15,7 +15,6 @@ const sourcemaps = require("gulp-sourcemaps");
 
 const path = require("path");
 
-
 gulp.task('ts', gulp.series(() => {
   return browserify(path.join('.', 'Scripts', 'main.ts'), {
       debug: true
@@ -35,7 +34,7 @@ gulp.task('ts', gulp.series(() => {
     .pipe(sourcemaps.init({
       loadMaps: true
     }))
-    //.pipe(uglify())
+    .pipe(uglify())
     .on('error', (err) => {
       console.log(err.message);
       console.log(err.annotated);

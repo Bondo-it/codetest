@@ -1,7 +1,7 @@
 
 [![N|Solid](https://www.luftborn.com/img/logo.svg)](https://www.luftborn.com)
 
-# Luftborn codetest
+# Codetest
 
 # Before we start
   - Clone repository

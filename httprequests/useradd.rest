@@ -1,4 +1,4 @@
-PUT https://localhost:5001/api/user/add
+PUT http://localhost:5000/api/user/add
 Content-Type: application/json; charset=utf-8
 
 {

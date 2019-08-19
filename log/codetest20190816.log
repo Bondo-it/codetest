@@ -1,0 +1,239 @@
+[21:00:19 DBG] Starting web host
+[21:00:20 FTL] Host terminated unexpectedly
+System.FormatException: Could not parse the JSON file. Error on line number '0': 'p{'. ---> Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: p. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.Linq.JObject.Load(JsonReader reader, JsonLoadSettings settings)
+   at Microsoft.Extensions.Configuration.Json.JsonConfigurationFileParser.ParseStream(Stream input)
+   at Microsoft.Extensions.Configuration.Json.JsonConfigurationProvider.Load(Stream stream)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+   at Microsoft.Extensions.Configuration.FileConfigurationProvider.<.ctor>b__0_1()
+   at Microsoft.Extensions.Primitives.ChangeToken.<>c__DisplayClass0_0.<OnChange>b__0(Object s)
+   at System.Threading.CancellationTokenSource.InternalRegister(Action`1 callback, Object stateForCallback, SynchronizationContext syncContext, ExecutionContext executionContext)
+   at System.Threading.CancellationToken.Register(Action`1 callback, Object state, Boolean useSyncContext, Boolean useExecutionContext)
+   at Microsoft.Extensions.Primitives.CancellationChangeToken.RegisterChangeCallback(Action`1 callback, Object state)
+   at Microsoft.Extensions.Primitives.ChangeToken.OnChange(Func`1 changeTokenProducer, Action changeTokenConsumer)
+   at Microsoft.Extensions.Configuration.FileConfigurationProvider..ctor(FileConfigurationSource source)
+   at Microsoft.Extensions.Configuration.Json.JsonConfigurationSource.Build(IConfigurationBuilder builder)
+   at Microsoft.Extensions.Configuration.ConfigurationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.WebHostBuilder.BuildCommonServices(AggregateException& hostingStartupErrors)
+   at Microsoft.AspNetCore.Hosting.WebHostBuilder.Build()
+   at codetest.Program.Main(String[] args) in /home/bondo/projects/codetest/Program.cs:line 35
+[21:02:45 DBG] Starting web host
+[21:02:47 DBG] Getting mongocollection codetest.Models.User
+[21:02:47 DBG] Creating mongo index
+[21:03:18 ERR] Error creating index codetest.Models.User
+[21:03:18 ERR]    at MongoDB.Driver.Core.Clusters.Cluster.ThrowTimeoutException(IServerSelector selector, ClusterDescription description)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChangedHelper.HandleCompletedTask(Task completedTask)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChanged(IServerSelector selector, ClusterDescription description, Task descriptionChangedTask, TimeSpan timeout, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Clusters.Cluster.SelectServer(IServerSelector selector, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupportedAfterServerSelection(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupported(CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.StartImplicitSession(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.MongoIndexManager.CreateMany(IEnumerable`1 models, CreateManyIndexesOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.MongoIndexManager.CreateMany(IEnumerable`1 models, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoIndexManagerBase`1.CreateOne(IndexKeysDefinition`1 keys, CreateIndexOptions options, CancellationToken cancellationToken)
+   at codetest.Repositories.BaseRepository`1.CreateIndex() in /home/bondo/projects/codetest/Repositories/BaseRepository.cs:line 65
+[21:27:27 DBG] Starting web host
+[21:27:29 DBG] Getting mongocollection codetest.Models.User
+[21:27:30 DBG] Creating mongo index
+[21:28:00 ERR] Error creating index codetest.Models.User
+[21:28:00 ERR]    at MongoDB.Driver.Core.Clusters.Cluster.ThrowTimeoutException(IServerSelector selector, ClusterDescription description)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChangedHelper.HandleCompletedTask(Task completedTask)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChanged(IServerSelector selector, ClusterDescription description, Task descriptionChangedTask, TimeSpan timeout, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Clusters.Cluster.SelectServer(IServerSelector selector, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupportedAfterServerSelection(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupported(CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.StartImplicitSession(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.MongoIndexManager.CreateMany(IEnumerable`1 models, CreateManyIndexesOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.MongoIndexManager.CreateMany(IEnumerable`1 models, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoIndexManagerBase`1.CreateOne(IndexKeysDefinition`1 keys, CreateIndexOptions options, CancellationToken cancellationToken)
+   at codetest.Repositories.BaseRepository`1.CreateIndex() in /home/bondo/projects/codetest/Repositories/BaseRepository.cs:line 65
+[21:29:55 DBG] Starting web host
+[21:29:58 DBG] Getting mongocollection codetest.Models.User
+[21:29:58 DBG] Creating mongo index
+[21:30:28 ERR] Error creating index codetest.Models.User
+[21:30:28 ERR]    at MongoDB.Driver.Core.Clusters.Cluster.ThrowTimeoutException(IServerSelector selector, ClusterDescription description)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChangedHelper.HandleCompletedTask(Task completedTask)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChanged(IServerSelector selector, ClusterDescription description, Task descriptionChangedTask, TimeSpan timeout, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Clusters.Cluster.SelectServer(IServerSelector selector, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupportedAfterServerSelection(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupported(CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.StartImplicitSession(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.MongoIndexManager.CreateMany(IEnumerable`1 models, CreateManyIndexesOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.MongoIndexManager.CreateMany(IEnumerable`1 models, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoIndexManagerBase`1.CreateOne(IndexKeysDefinition`1 keys, CreateIndexOptions options, CancellationToken cancellationToken)
+   at codetest.Repositories.BaseRepository`1.CreateIndex() in /home/bondo/projects/codetest/Repositories/BaseRepository.cs:line 65
+[21:36:51 DBG] Starting web host
+[21:36:54 DBG] Getting mongocollection codetest.Models.User
+[21:36:54 DBG] Creating mongo index
+[21:37:25 ERR] Error creating index codetest.Models.User
+[21:37:25 ERR]    at MongoDB.Driver.Core.Clusters.Cluster.ThrowTimeoutException(IServerSelector selector, ClusterDescription description)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChangedHelper.HandleCompletedTask(Task completedTask)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChanged(IServerSelector selector, ClusterDescription description, Task descriptionChangedTask, TimeSpan timeout, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Clusters.Cluster.SelectServer(IServerSelector selector, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupportedAfterServerSelection(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupported(CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.StartImplicitSession(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.MongoIndexManager.CreateMany(IEnumerable`1 models, CreateManyIndexesOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.MongoIndexManager.CreateMany(IEnumerable`1 models, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoIndexManagerBase`1.CreateOne(IndexKeysDefinition`1 keys, CreateIndexOptions options, CancellationToken cancellationToken)
+   at codetest.Repositories.BaseRepository`1.CreateIndex() in /home/bondo/projects/codetest/Repositories/BaseRepository.cs:line 65
+[21:39:19 ERR] An unhandled exception has occurred while executing the request.
+System.TimeoutException: A timeout occured after 30000ms selecting a server using CompositeServerSelector{ Selectors = MongoDB.Driver.MongoClient+AreSessionsSupportedServerSelector, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 } }. Client view of cluster state is { ClusterId : "1", ConnectionMode : "ReplicaSet", Type : "ReplicaSet", State : "Disconnected", Servers : [] }.
+   at MongoDB.Driver.Core.Clusters.Cluster.ThrowTimeoutException(IServerSelector selector, ClusterDescription description)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChangedHelper.HandleCompletedTask(Task completedTask)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChanged(IServerSelector selector, ClusterDescription description, Task descriptionChangedTask, TimeSpan timeout, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Clusters.Cluster.SelectServer(IServerSelector selector, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupportedAfterServerSelection(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupported(CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.StartImplicitSession(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.FindSync[TProjection](FilterDefinition`1 filter, FindOptions`2 options, CancellationToken cancellationToken)
+   at MongoDB.Driver.FindFluent`2.ToCursor(CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToList[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at codetest.Repositories.BaseRepository`1.GetAllSync(SortDefinition`1 sort, ProjectionDefinition`1 projection) in /home/bondo/projects/codetest/Repositories/BaseRepository.cs:line 306
+   at codetest.Controllers.HomeController.Index() in /home/bondo/projects/codetest/Controllers/HomeController.cs:line 20
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[21:40:51 DBG] Starting web host
+[21:40:54 DBG] Getting mongocollection codetest.Models.User
+[21:40:54 DBG] Creating mongo index
+[21:41:25 ERR] Error creating index codetest.Models.User
+[21:41:25 ERR]    at MongoDB.Driver.Core.Clusters.Cluster.ThrowTimeoutException(IServerSelector selector, ClusterDescription description)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChangedHelper.HandleCompletedTask(Task completedTask)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChanged(IServerSelector selector, ClusterDescription description, Task descriptionChangedTask, TimeSpan timeout, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Clusters.Cluster.SelectServer(IServerSelector selector, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupportedAfterServerSelection(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupported(CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.StartImplicitSession(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.MongoIndexManager.CreateMany(IEnumerable`1 models, CreateManyIndexesOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.MongoIndexManager.CreateMany(IEnumerable`1 models, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoIndexManagerBase`1.CreateOne(IndexKeysDefinition`1 keys, CreateIndexOptions options, CancellationToken cancellationToken)
+   at codetest.Repositories.BaseRepository`1.CreateIndex() in /home/bondo/projects/codetest/Repositories/BaseRepository.cs:line 65
+[21:41:58 ERR] An unhandled exception has occurred while executing the request.
+System.TimeoutException: A timeout occured after 30000ms selecting a server using CompositeServerSelector{ Selectors = MongoDB.Driver.MongoClient+AreSessionsSupportedServerSelector, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 } }. Client view of cluster state is { ClusterId : "1", ConnectionMode : "ReplicaSet", Type : "ReplicaSet", State : "Disconnected", Servers : [] }.
+   at MongoDB.Driver.Core.Clusters.Cluster.ThrowTimeoutException(IServerSelector selector, ClusterDescription description)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChangedHelper.HandleCompletedTask(Task completedTask)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChanged(IServerSelector selector, ClusterDescription description, Task descriptionChangedTask, TimeSpan timeout, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Clusters.Cluster.SelectServer(IServerSelector selector, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupportedAfterServerSelection(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupported(CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.StartImplicitSession(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.FindSync[TProjection](FilterDefinition`1 filter, FindOptions`2 options, CancellationToken cancellationToken)
+   at MongoDB.Driver.FindFluent`2.ToCursor(CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToList[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at codetest.Repositories.BaseRepository`1.GetAllSync(SortDefinition`1 sort, ProjectionDefinition`1 projection) in /home/bondo/projects/codetest/Repositories/BaseRepository.cs:line 306
+   at codetest.Controllers.HomeController.Index() in /home/bondo/projects/codetest/Controllers/HomeController.cs:line 20
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[21:44:32 DBG] Starting web host
+[21:44:50 DBG] Getting mongocollection codetest.Models.User
+[21:44:50 DBG] Creating mongo index
+[21:45:20 ERR] Error creating index codetest.Models.User
+[21:45:20 ERR]    at MongoDB.Driver.Core.Clusters.Cluster.ThrowTimeoutException(IServerSelector selector, ClusterDescription description)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChangedHelper.HandleCompletedTask(Task completedTask)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChanged(IServerSelector selector, ClusterDescription description, Task descriptionChangedTask, TimeSpan timeout, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Clusters.Cluster.SelectServer(IServerSelector selector, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupportedAfterServerSelection(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupported(CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.StartImplicitSession(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.MongoIndexManager.CreateMany(IEnumerable`1 models, CreateManyIndexesOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.MongoIndexManager.CreateMany(IEnumerable`1 models, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoIndexManagerBase`1.CreateOne(IndexKeysDefinition`1 keys, CreateIndexOptions options, CancellationToken cancellationToken)
+   at codetest.Repositories.BaseRepository`1.CreateIndex() in /home/bondo/projects/codetest/Repositories/BaseRepository.cs:line 65
+[21:50:07 DBG] Starting web host
+[21:50:10 DBG] Getting mongocollection codetest.Models.User
+[21:50:10 DBG] Creating mongo index
+[21:50:15 DBG] Getting mongocollection codetest.Models.User
+[21:50:15 DBG] Creating mongo index
+[21:50:16 DBG] Getting mongocollection codetest.Models.User
+[21:50:16 DBG] Creating mongo index
+[21:50:18 DBG] Getting mongocollection codetest.Models.User
+[21:50:18 DBG] Creating mongo index
+[21:50:18 DBG] Getting mongocollection codetest.Models.User
+[21:50:18 DBG] Creating mongo index
+[21:50:21 DBG] Getting mongocollection codetest.Models.User
+[21:50:21 DBG] Creating mongo index
+[21:50:21 DBG] Getting mongocollection codetest.Models.User
+[21:50:21 DBG] Creating mongo index
+[21:50:25 DBG] Getting mongocollection codetest.Models.User
+[21:50:25 DBG] Creating mongo index
+[21:50:25 DBG] Getting mongocollection codetest.Models.User
+[21:50:25 DBG] Creating mongo index
+[21:51:35 DBG] Getting mongocollection codetest.Models.User
+[21:51:35 DBG] Creating mongo index
+[21:51:57 DBG] Getting mongocollection codetest.Models.User
+[21:51:57 DBG] Creating mongo index
+[21:52:44 DBG] Getting mongocollection codetest.Models.User
+[21:52:44 DBG] Creating mongo index
+[21:52:44 DBG] Getting mongocollection codetest.Models.User
+[21:52:44 DBG] Creating mongo index
+[22:00:43 DBG] Starting web host
+[22:00:45 DBG] Getting mongocollection codetest.Models.User
+[22:00:45 DBG] Creating mongo index
+[22:01:16 ERR] Error creating index codetest.Models.User
+[22:01:16 ERR]    at MongoDB.Driver.Core.Clusters.Cluster.ThrowTimeoutException(IServerSelector selector, ClusterDescription description)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChangedHelper.HandleCompletedTask(Task completedTask)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChanged(IServerSelector selector, ClusterDescription description, Task descriptionChangedTask, TimeSpan timeout, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Clusters.Cluster.SelectServer(IServerSelector selector, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupportedAfterServerSelection(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoClient.AreSessionsSupported(CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.StartImplicitSession(CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.MongoIndexManager.CreateMany(IEnumerable`1 models, CreateManyIndexesOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.MongoIndexManager.CreateMany(IEnumerable`1 models, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoIndexManagerBase`1.CreateOne(IndexKeysDefinition`1 keys, CreateIndexOptions options, CancellationToken cancellationToken)
+   at codetest.Repositories.BaseRepository`1.CreateIndex() in /home/bondo/projects/codetest/Repositories/BaseRepository.cs:line 65
+[22:03:12 DBG] Starting web host
+[22:03:16 DBG] Getting mongocollection codetest.Models.User
+[22:03:16 DBG] Creating mongo index
+[22:03:21 DBG] Getting mongocollection codetest.Models.User
+[22:03:21 DBG] Creating mongo index
+[22:03:22 DBG] Getting mongocollection codetest.Models.User
+[22:03:22 DBG] Creating mongo index
+[22:03:22 DBG] Getting mongocollection codetest.Models.User
+[22:03:22 DBG] Creating mongo index
+[22:03:22 DBG] Getting mongocollection codetest.Models.User
+[22:03:22 DBG] Creating mongo index
+[22:03:24 DBG] Getting mongocollection codetest.Models.User
+[22:03:24 DBG] Creating mongo index
+[22:03:25 DBG] Getting mongocollection codetest.Models.User
+[22:03:25 DBG] Creating mongo index

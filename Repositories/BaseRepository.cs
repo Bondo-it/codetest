@@ -153,12 +153,12 @@ namespace codetest.Repositories
 
         public async Task<long> Count(Expression<Func<T, bool>> filter)
         {
-            return await MongoCollection.CountAsync(filter);
+            return await MongoCollection.CountDocumentsAsync(filter);
         }
 
         public long CountSync(Expression<Func<T, bool>> filter)
         {
-            return MongoCollection.Count(filter);
+            return MongoCollection.CountDocuments(filter);
         }
 
         public async Task Delete(T entity)

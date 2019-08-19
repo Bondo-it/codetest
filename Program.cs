@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
 
@@ -48,17 +41,7 @@ namespace codetest
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .ConfigureKestrel((context, options) =>
-                {
-                    options.Limits.Http2.MaxStreamsPerConnection = 100;
-                    options.Limits.Http2.MaxFrameSize = 16384;
-                    options.Limits.Http2.HeaderTableSize = 4096;
-
-                    options.Limits.MinRequestBodyDataRate =
-                        new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
-                    options.Limits.MinResponseDataRate =
-                        new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
-                })
+                .UseKestrel()
                 .UseSerilog()
                 .UseStartup<Startup>();
     }

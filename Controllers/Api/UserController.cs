@@ -1,16 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using codetest.Models;
 using codetest.MongoDB.DbBuilder;
 using codetest.Repositories;
-using codetest.Utilities;
-using codetest.Models.ViewModels;
-using System.Linq.Expressions;
-using codetest.MongoDB;
 using codetest.Specification;
 
 namespace codetest.Controllers.Api

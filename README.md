@@ -1,6 +1,3 @@
-
-[![N|Solid](https://www.luftborn.com/img/logo.svg)](https://www.luftborn.com)
-
 # Codetest
 
 # Before we start

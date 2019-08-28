@@ -13,30 +13,7 @@ export default class App {
     } catch (error) {}
   }
 
-  createUserListener() {
-    var form = document.forms.namedItem("createUser");
-    form.addEventListener("submit", () => {
-      event.preventDefault();
-
-      const addUserUrl = `${new UrlUtil().baseUrl()}/api/user/add`;
-      let json = convertFormToJsonString(form);
-
-      new MakeRequest(addUserUrl, "post")
-        .send(json)
-        .then(() => {
-          window.alert("Success");
-          form.reset();          
-        })
-        .catch(err => {
-          window.alert("Error");
-          console.error("Augh, there was an error!", err.statusText);
-        });
-    });
-  }
-
   setListeners() {
-    this.createUserListener();
-    
     var usersRows = document.querySelectorAll(".user");
     [].slice
     .call(usersRows)
@@ -78,11 +55,3 @@ document.onreadystatechange = () => {
     new App().execute();
   }
 };
-function convertFormToJsonString(form: HTMLFormElement) {
-  const formData = new FormData(form);
-  let jsonObject = {};
-  for (const [key, value] of formData.entries()) {
-    jsonObject[key] = value;
-  }
-  return JSON.stringify(jsonObject);
-}

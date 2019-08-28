@@ -8,7 +8,7 @@ namespace codetest.Specifications
         {
             try
             {
-                var mailAddress = new MailAddress(email);
+                new MailAddress(email);
             }
             catch
             {

@@ -1,6 +1,4 @@
-﻿using codetest.Models;
-using codetest.MongoDB.DbBuilder;
-using codetest.Repositories;
+﻿using codetest.Repositories.Interfaces;
 using codetest.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,43 +8,42 @@ namespace codetest.Controllers.Api
     [ApiController]
     public class ModalController : ControllerBase
     {
+        private readonly ViewRender _view;
+        private readonly IUserRepository _userRepository;
 
-        private readonly ViewRender view;
-
-        public ModalController(ViewRender view)
+        public ModalController(ViewRender view, IUserRepository userRepository)
         {
-            this.view = view;
+            _view = view;
+            _userRepository = userRepository;
         }
 
         [HttpGet]
         public string Success()
         {
-            var html = view.Render("Modal/success", new { Title = "Success", Message = "" });
+            var html = _view.Render("Modal/success", new { Title = "Success", Message = "" });
             return html;
         }
 
         [HttpGet]
         public string Failed()
         {
-            var html = view.Render("Modal/success", new { Title = "Success", Message = "" });
+            var html = _view.Render("Modal/success", new { Title = "Success", Message = "" });
             return html;
         }
 
         [HttpGet]
         public string User(string id)
         {
-            var userRepository = new BaseRepository<User>(new BaseDbBuilder());
-            var user = userRepository.GetSingleByExpression(x => x.Id == id).Result;
-            string html = view.Render("Modal/User", user);
+            var user = _userRepository.GetSingleByExpression(x => x.Id == id).Result;
+            var html = _view.Render("Modal/User", user);
             return html;
         }
 
         [HttpGet]
         public string Get(string viewType)
         {
-            var viewPath = string.Format("Modal/{0}", viewType);
-
-            var html = view.Render(viewPath, new { Title = "Success", Message = "" });
+            var viewPath = $"Modal/{viewType}";
+            var html = _view.Render(viewPath, new { Title = "Success", Message = "" });
             return html;
         }
     }

@@ -1,5 +1,3 @@
-using System;
-
 namespace codetest.Models
 {
     public class ErrorViewModel

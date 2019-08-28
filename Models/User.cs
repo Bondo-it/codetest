@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
 using codetest.Models.Interfaces;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
 
 namespace codetest.Models
 {
@@ -18,30 +15,31 @@ namespace codetest.Models
 
         [BsonIgnoreIfDefault]
         [BsonIgnoreIfNull]
-        [Display(Name = "Fulde navn")]
+        [Display(Name = "Full Name")]
         public string Name { get; set; }
 
 
         [BsonIgnoreIfDefault]
         [BsonIgnoreIfNull]
-        [Display(Name = "Brugernavn")]
+        [Display(Name = "Name")]
         public string UserName { get; set; }
 
         [BsonIgnoreIfDefault]
         [BsonIgnoreIfNull]
         [Required]
         [DataType(DataType.EmailAddress)]
-        [Display(Name = "Email adresse")]
+        [Display(Name = "Email address")]
         public string Email { get; set; }
 
         [BsonIgnoreIfDefault]
         [BsonIgnoreIfNull]
         [DataType(DataType.PhoneNumber)]
-        [Display(Name = "Telefon nummer")]
+        [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
         [BsonIgnoreIfDefault]
         [BsonIgnoreIfNull]
+        [Display(Name = "Address")]
         public string Address { get; set; }
 
         [BsonIgnoreIfDefault]
@@ -56,7 +54,7 @@ namespace codetest.Models
         [BsonIgnoreIfNull]
         public DateTime? ModifiedAt { get; set; }
 
-        override public string ToString()
+        public override string ToString()
         {
             var stringBuilder = new StringBuilder();
             stringBuilder.Append(this.GetType());

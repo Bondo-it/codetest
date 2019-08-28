@@ -12,44 +12,34 @@ namespace codetest.Repositories
 {
     public class BaseRepository<T> : IRepository<T> where T : class, IEntity
     {
-        protected IDbBuilder DbBuilder { get; }
-
         protected IMongoCollection<T> MongoCollection { get; set; }
 
-        protected IMongoDatabase MongoDatabase { get; set; }
+        private IMongoDatabase _mongoDatabase;
 
-        public BaseRepository(IDbBuilder builder)
+        public BaseRepository(IMongoDatabase mongoDatabase)
         {
-            DbBuilder = builder;
+            _mongoDatabase = mongoDatabase;
             Initialize();
         }
 
         protected void Initialize()
         {
-            GetDatabase();
             GetCollection();
             if (MongoCollection == null) return;
             Log.Debug("Creating mongo index");
             CreateIndex();
         }
 
-        protected void GetDatabase()
-        {
-            var client = new MongoClient(DbBuilder.GetConnectionString());
-            MongoDatabase = client.GetDatabase(DbBuilder.GetDatabaseName());
-        }
-
         protected void GetCollection()
         {
             var type = typeof(T);
             if (MongoCollection != null) return;
-            Log.Debug($"Getting mongocollection {typeof(T)}");
-            MongoCollection = MongoDatabase.GetCollection<T>(type.Name);
+            Log.Debug($"Getting MongoCollection {typeof(T)}");
+            MongoCollection = _mongoDatabase.GetCollection<T>(type.Name);
         }
 
         protected virtual void CreateIndex()
         {
-
             try
             {
                 var indexDefinition = Builders<T>.IndexKeys.Combine(

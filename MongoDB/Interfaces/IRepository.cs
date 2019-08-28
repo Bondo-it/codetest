@@ -1,9 +1,9 @@
+using codetest.Models.Interfaces;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using codetest.Models.Interfaces;
-using MongoDB.Driver;
 
 namespace codetest.MongoDB.Interfaces
 {
@@ -67,5 +67,13 @@ namespace codetest.MongoDB.Interfaces
             SortDefinition<T> sort = null,
             ProjectionDefinition<T> projection = null,
             int index = 1);
+
+        bool AnySync(
+            Expression<Func<T, bool>> filter,
+            SortDefinition<T> sort = null,
+            ProjectionDefinition<T> projection = null,
+            int index = 1);
+
+        void ReplaceOneSync(object id, T newValue);
     }
 }

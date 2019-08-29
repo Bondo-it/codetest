@@ -1,7 +1,7 @@
 using System;
 using System.Linq.Expressions;
 
-namespace codetest.Specification
+namespace codetest.Specifications
 {
     public interface ISpecification<T>
     {

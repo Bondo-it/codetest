@@ -1,8 +1,6 @@
 using System.Net.Mail;
-using System.Text.RegularExpressions;
-using codetest.Models;
 
-namespace codetest.Specification
+namespace codetest.Specifications
 {
     public class EmailSpecification : CompositeSpecification<string>
     {
@@ -10,7 +8,7 @@ namespace codetest.Specification
         {
             try
             {
-                new MailAddress(email);
+                var mailAddress = new MailAddress(email);
             }
             catch
             {

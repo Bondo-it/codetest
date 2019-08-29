@@ -1,9 +1,8 @@
-using System;
-using Microsoft.AspNetCore.Mvc;
 using codetest.Models;
-using codetest.MongoDB.DbBuilder;
-using codetest.Repositories;
-using codetest.Specification;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using codetest.Repositories.Interfaces;
+using codetest.Specifications;
 
 namespace codetest.Controllers.Api
 {
@@ -11,11 +10,11 @@ namespace codetest.Controllers.Api
     [ApiController]
     public class UserController : Controller
     {
-        private readonly BaseRepository<User> _userRepository;
+        private readonly IUserRepository _userRepository;
 
-        public UserController()
+        public UserController(IUserRepository userRepository)
         {
-            _userRepository = new BaseRepository<User>(new BaseDbBuilder());
+            _userRepository = userRepository;
         }
 
         [HttpGet]
@@ -36,24 +35,24 @@ namespace codetest.Controllers.Api
                 x.Email == user.Email ||
                 x.UserName == user.UserName))
             {
-                throw new ArgumentException("Users email og username allready taken.");
+                throw new ArgumentException("User email or username already taken.");
             }
             _userRepository.AddSync(user);
-            return new JsonResult(new { success = true, responseText = "User successfuly added!" });
+            return new JsonResult(new { success = true, responseText = "User successfully added!" });
         }
 
         [HttpPatch]
         public JsonResult Change(string id, [FromBody]User user)
         {
             _userRepository.ReplaceOneSync(id, user);
-            return new JsonResult(new { success = true, responseText = "User successfuly modified!" });
+            return new JsonResult(new { success = true, responseText = "User successfully modified!" });
         }
 
         [HttpDelete]
         public JsonResult Delete(string id)
         {
             _userRepository.DeleteSync(x => x.Id == id);
-            return new JsonResult(new { success = true, responseText = "User successfuly deleted!" });
+            return new JsonResult(new { success = true, responseText = "User successfully deleted!" });
         }
     }
 }

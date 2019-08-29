@@ -1,8 +1,6 @@
-using System.Net.Mail;
-using System.Text.RegularExpressions;
 using codetest.Models;
 
-namespace codetest.Specification
+namespace codetest.Specifications
 {
     public class UserSpecification : CompositeSpecification<User>
     {

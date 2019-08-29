@@ -1,24 +1,23 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BaseupWeb.Utilities
+namespace codetest.Utilities
 {
     public static class ToStringUtil
     {
         public static string ObjToString(this object obj)
         {
-			if(obj == null) return string.Empty;
-			if(obj is IList &&
-				obj.GetType().IsGenericType &&
-				obj.GetType().GetGenericTypeDefinition().IsAssignableFrom(typeof(List<>)))
-			{
-				var list = (List<object>)obj;
-				var sb = new StringBuilder();
-				list.ForEach(x => sb.Append($"\t\t{x.ObjToString()}\n"));
-				return sb.ToString();
-			}
+            if (obj == null) return string.Empty;
+            if (obj is IList &&
+                obj.GetType().IsGenericType &&
+                obj.GetType().GetGenericTypeDefinition().IsAssignableFrom(typeof(List<>)))
+            {
+                var list = (List<object>)obj;
+                var sb = new StringBuilder();
+                list.ForEach(x => sb.Append($"\t\t{x.ObjToString()}\n"));
+                return sb.ToString();
+            }
 
             var stringBuilder = new StringBuilder();
             stringBuilder.Append(obj.GetType());

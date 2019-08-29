@@ -1,6 +1,7 @@
 export default class MakeRequest {
   method: string;
   url: string;
+  
   constructor(url: string, method: string = "get") {
     this.method = method;
     this.url = url;
@@ -12,10 +13,9 @@ export default class MakeRequest {
       xmlHttpRequest.open(this.method, this.url);
 
       if (body != null) {
-          console.log('passou aqui');
-          xmlHttpRequest.setRequestHeader("Accept", "*/*");
-          xmlHttpRequest.setRequestHeader("Content-Type", "application/json");
-    }
+        xmlHttpRequest.setRequestHeader("Accept", "*/*");
+        xmlHttpRequest.setRequestHeader("Content-Type", "application/json");
+      }
 
       xmlHttpRequest.onload = () => {
         if (xmlHttpRequest.status >= 200 && xmlHttpRequest.status < 300) {
@@ -27,14 +27,15 @@ export default class MakeRequest {
           });
         }
       };
+
       xmlHttpRequest.onerror = () => {
         reject({
           status: xmlHttpRequest.status,
           statusText: xmlHttpRequest.statusText
         });
       };
-      xmlHttpRequest.send(body);
 
+      xmlHttpRequest.send(body);
     });
   }
 }

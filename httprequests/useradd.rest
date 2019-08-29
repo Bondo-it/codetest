@@ -1,10 +1,10 @@
-PUT http://localhost:5000/api/user/add
+POST http://localhost:5000/api/user/add
 Content-Type: application/json; charset=utf-8
 
 {
-    "name": "John Doe",
-    "userName": "jdoe",
-    "email": "doe@ninus.com",
+    "name": "asdsadasdasd",
+    "userName": "sdfsfsdf",
+    "email": "sdfsdfsdf@sdfsdfsdf.com",
     "phoneNumber": "22446122",
     "address": "kaninhullet 14"
 }

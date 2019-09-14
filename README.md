@@ -18,6 +18,7 @@
 ```
 dotnet run codetest.csproj
 ```
+
 # Gerneral information about the project
 The project is a standard dotnet core 2.2 MCV project.
 

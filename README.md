@@ -51,6 +51,13 @@ In general, we want to have at least some code in the following three languages.
 Using any external library is allowed, the same goes for old code in your repository. Utilizing external libraries does have to be utilized for a good reason though.
 
 ## Surggestions to the test
+
+### Improve code quality and implament SOLID
+You can reimplament current functionality using solid principles, DI and interfaces.
+
+### Upgrade to dotnet 3.1
+You can upgrade to latest dotnet framework
+s
 ### CRUD
 A surggestion to this test is to create the frontend that utilizes all the CRUD operations in the api controller (ADD, DELETE, EDIT).
 

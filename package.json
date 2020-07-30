@@ -28,7 +28,8 @@
     "vinyl-source-stream": "~2.0.0"
   },
   "scripts": {
-    "compile": "gulp ts"
+    "compile": "gulp ts",
+    "watch": "gulp watch"
   },
   "author": "",
   "license": "ISC",

@@ -14,12 +14,13 @@
   </PropertyGroup>
 
   <Target Name="MyPreCompileTarget" BeforeTargets="BeforeBuild">
-    <Exec Command="gulp ts" />
+    <Exec Command="npm i" />
+    <Exec Command="npm run compile" />
   </Target>
 
   <Target Name="TestTarget" AfterTargets="ProjectOpen">
     <Message Importance="High" Text="watch assets" />
-    <Exec Command="gulp watch" />
+    <Exec Command="npm run watch" />
   </Target>
   
   <ItemGroup>

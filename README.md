@@ -52,7 +52,7 @@ Using any external library is allowed, the same goes for old code in your reposi
 
 ## Surggestions to the test
 
-### Improve code quality and implament SOLID
+### Improve codequality and implament SOLID
 You can reimplament current functionality using solid principles, DI and interfaces.
 
 ### Upgrade to dotnet 3.1

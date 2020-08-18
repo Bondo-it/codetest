@@ -42,6 +42,7 @@ namespace codetest
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseKestrel()
+                .UseIIS()
                 .UseSerilog()
                 .UseStartup<Startup>();
     }

@@ -57,7 +57,7 @@ You can reimplament current functionality using solid principles, DI and interfa
 
 ### Upgrade to dotnet 3.1
 You can upgrade to latest dotnet framework
-s
+
 ### CRUD
 A surggestion to this test is to create the frontend that utilizes all the CRUD operations in the api controller (ADD, DELETE, EDIT).
 

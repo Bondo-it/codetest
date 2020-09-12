@@ -7,9 +7,10 @@
 
 # Before we start
   - Clone repository
-  - Install dependencie:
+  - Install dependencie (should be done automatically when running the project):
 ```sh
-    npm install
+    cd Frontend
+    npm i
     dotnet restore
 ```
 ### Run:

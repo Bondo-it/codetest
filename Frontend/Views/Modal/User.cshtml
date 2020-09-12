@@ -1,0 +1,20 @@
+﻿@using DomainModels.Models
+@model User
+
+@{
+    ViewData["Title"] = "User";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Model.Name</h1>
+    <pre>
+        @Model.Id
+        @Model.Name
+        @Model.UserName
+        @Model.Email
+        @Model.Address
+        @Model.PhoneNumber
+        @Model.CreatedAt
+        @Model.ModifiedAt
+    </pre>
+</div>

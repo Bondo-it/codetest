@@ -1,0 +1,37 @@
+[
+    {
+        "Name": "Morten Bondo",
+        "UserName": "Bondo",
+        "Email": "morten@luftborn.com",
+        "PhoneNumber": "22445922",
+        "Address": "provstevej 12"
+    },
+    {
+        "Name": "Esben Jørgensen",
+        "UserName": "esj",
+        "Email": "esben@luftborn.com",
+        "PhoneNumber": "45223344",
+        "Address": "rolighedsbej 12"
+    },
+    {
+        "Name": "Lars Pedersen",
+        "UserName": "lpe",
+        "Email": "lars@pedersen.com",
+        "PhoneNumber": "66556644",
+        "Address": "larsensvej 33"
+    },
+    {
+        "Name": "Kurt Thybo",
+        "UserName": "Thybo",
+        "Email": "ku8@statoil.com",
+        "PhoneNumber": "45645634",
+        "Address": "olievej 66"
+    },
+    {
+        "Name": "Karin Kanin",
+        "UserName": "Ninka",
+        "Email": "ninka@ninus.com",
+        "PhoneNumber": "99889978",
+        "Address": "kaninhullet 14"
+    }
+]

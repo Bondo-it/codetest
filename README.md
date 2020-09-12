@@ -2,8 +2,8 @@
 
 # Requirements
   - [Nodejs](https://nodejs.org/en/)
-  - [Dotnet core 2.2 Runtime](https://dotnet.microsoft.com/download/dotnet-core/2.2)
-  - [Dotnet core 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+  - [Dotnet core 3.1 Runtime](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+  - [Dotnet core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
 # Before we start
   - Clone repository
@@ -16,11 +16,11 @@
   - Use the debug function in either visual studio or vs code
   - Or just run this command:
 ```sh
-dotnet run codetest.csproj
+dotnet run Frontend/Frontend.csproj
 ```
 
 # Gerneral information about the project
-The project is a standard dotnet core 2.2 MCV project.
+The project is a standard dotnet core 3.1 MCV project.
 
 No libraries are used in the javascript. We utilize Gulp to bundle and compile both the TypeScript and the SCSS.
 
@@ -42,36 +42,28 @@ Returns your base-view.
   - [Route("[controller]/[action]")]
   
 # Test objectives:
-
 In general, we want to have at least some code in the following three languages.
-  - Javascript (TypeScript)
   - C#
+  - Javascript (TypeScript)
   - CSS (SCSS)
 
 Using any external library is allowed, the same goes for old code in your repository. Utilizing external libraries does have to be utilized for a good reason though.
 
 ## Surggestions to the test
-
-### Improve codequality and implament SOLID
-You can reimplament current functionality using solid principles, DI and interfaces.
-
-### Upgrade to dotnet 3.1
-You can upgrade to latest dotnet framework
-
-### CRUD
-A surggestion to this test is to create the frontend that utilizes all the CRUD operations in the api controller (ADD, DELETE, EDIT).
+### Web Components
+Web components are always preffered as its cross platform compatible, and are modular. If you could create one web component, it would be very much appreciated, even though it might be simple.
 
 ### Login
 Login functionality might be a great addition. We almost always need to implement login on our soulutions.
 
-### UnitTesting
+### Improve layout (optional)
+The current layout is very simple, if you could improve it, it would be a big benefit.
+
+### Improve logging (optional)
+logging can always be improved, see if you could add your touch to the logging.
+
+### UnitTesting (optional)
 Unit testing could be a very nice addition to this project.
-
-### Change the gulp bundler/compiler
-Right now we use gulp to compile everything. Maybe this can be improved.
-
-### Your own touch
-We really want you to have freedom to do whatever you'd like in this test. Our focus is to see your ability and your focus, so what you do exactly is 100% up to you. If you want to implament a big framework, thats fine. - I'm currently pretty hooked on [svelte](https://svelte.dev) btw :)
 
 # What do we find important
 - Think scalable. Our solution needs to be maintainable and scalable.
@@ -84,7 +76,7 @@ We really want you to have freedom to do whatever you'd like in this test. Our f
 # Write pretty code
 - We have some coding guidelines that we would like all our code to follow, it would be nice if you could read it, and follow it as much as you can.
 
-	- [the overall guidelines](https://github.com/luftborn-ivs/design-guide)
+	- [The overall guidelines](https://github.com/luftborn-ivs/design-guide)
 
 	- [C#](https://github.com/luftborn-ivs/design-guide/blob/master/c%23/readme.md)
 

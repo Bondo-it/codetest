@@ -142,7 +142,7 @@ namespace DataComponent.Repositories
 
 		public void BulkInsertSync(ICollection<T> entities)
 		{
-			var now = System.DateTime.Now;
+			var now = DateTime.Now;
 
 			foreach (var entity in entities)
 			{
@@ -194,7 +194,7 @@ namespace DataComponent.Repositories
 
 		public async Task ReplaceOne(Expression<Func<T, bool>> filter, T newValue)
 		{
-			var now = System.DateTime.Now;
+			var now = DateTime.Now;
 			newValue.ModifiedAt = now;
 
 			try
@@ -218,7 +218,7 @@ namespace DataComponent.Repositories
 
 		public void ReplaceOneSync(object id, T newValue)
 		{
-			var now = System.DateTime.Now;
+			var now = DateTime.Now;
 			newValue.ModifiedAt = now;
 
 			try
@@ -242,7 +242,7 @@ namespace DataComponent.Repositories
 
 		public void ReplaceOneSync(Expression<Func<T, bool>> filter, T newValue)
 		{
-			var now = System.DateTime.Now;
+			var now = DateTime.Now;
 			newValue.ModifiedAt = now;
 
 			try

@@ -10,6 +10,7 @@
       AfterBuild;
       ProjectOpen;
     </BuildDependsOn>
+	  <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
   </PropertyGroup>
 
   <Target Name="MyPreCompileTarget" BeforeTargets="BeforeBuild">

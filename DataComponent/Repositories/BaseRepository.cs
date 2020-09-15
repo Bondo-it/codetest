@@ -1,26 +1,31 @@
+using DataComponent.MongoDB.Interfaces;
+
+using DomainModels.Models.Interfaces;
+
+using Microsoft.Extensions.Logging;
+
+using MongoDB.Driver;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using DataComponent.MongoDB.Interfaces;
-using DomainModels.Models.Interfaces;
-using Microsoft.Extensions.Logging;
-using MongoDB.Driver;
 
 namespace DataComponent.Repositories
 {
 	public class BaseRepository<T> : IRepository<T> where T : class, IEntity
 	{
-		protected IMongoCollection<T> MongoCollection { get; set; }
+		private readonly ILogger _log;
+		private readonly IMongoDatabase _mongoDatabase;
 
-		private IMongoDatabase _mongoDatabase;
-		private ILogger _log;
+		protected IMongoCollection<T> MongoCollection { get; set; }
 
 		public BaseRepository(IMongoDatabase mongoDatabase, ILogger<BaseRepository<T>> logger)
 		{
-			_mongoDatabase = mongoDatabase;
-			_log = logger;
+			_log = logger ?? throw new ArgumentNullException(nameof(logger));
+			_mongoDatabase = mongoDatabase ?? throw new ArgumentNullException(nameof(mongoDatabase));
+
 			Initialize();
 		}
 
@@ -38,13 +43,13 @@ namespace DataComponent.Repositories
 
 		protected void GetCollection()
 		{
-			var type = typeof(T);
 			if (MongoCollection != null)
 			{
 				return;
 			}
 
-			_log.LogDebug($"Getting MongoCollection {typeof(T)}");
+			var type = typeof(T);
+			_log.LogDebug($"Getting MongoCollection {type.Name}");
 			MongoCollection = _mongoDatabase.GetCollection<T>(type.Name);
 		}
 
@@ -73,7 +78,7 @@ namespace DataComponent.Repositories
 
 		public void AddSync(T entity)
 		{
-			var now = System.DateTime.Now;
+			var now = DateTime.Now;
 			entity.AddedAt = now;
 			entity.ModifiedAt = now;
 			entity.CreatedAt = now;
@@ -83,7 +88,7 @@ namespace DataComponent.Repositories
 
 		public async Task Add(T entity)
 		{
-			var now = System.DateTime.Now;
+			var now = DateTime.Now;
 			entity.AddedAt = now;
 			entity.ModifiedAt = now;
 			entity.CreatedAt = now;
@@ -93,7 +98,7 @@ namespace DataComponent.Repositories
 
 		public async Task AddMany(ICollection<T> entities)
 		{
-			var now = System.DateTime.Now;
+			var now = DateTime.Now;
 
 			foreach (var entity in entities)
 			{
@@ -107,7 +112,7 @@ namespace DataComponent.Repositories
 
 		public void AddManySync(ICollection<T> entities)
 		{
-			var now = System.DateTime.Now;
+			var now = DateTime.Now;
 
 			foreach (var entity in entities)
 			{
@@ -121,7 +126,7 @@ namespace DataComponent.Repositories
 
 		public async Task BulkInsert(ICollection<T> entities)
 		{
-			var now = System.DateTime.Now;
+			var now = DateTime.Now;
 
 			foreach (var entity in entities)
 			{
@@ -137,7 +142,7 @@ namespace DataComponent.Repositories
 
 		public void BulkInsertSync(ICollection<T> entities)
 		{
-			var now = System.DateTime.Now;
+			var now = DateTime.Now;
 
 			foreach (var entity in entities)
 			{
@@ -189,7 +194,7 @@ namespace DataComponent.Repositories
 
 		public async Task ReplaceOne(Expression<Func<T, bool>> filter, T newValue)
 		{
-			var now = System.DateTime.Now;
+			var now = DateTime.Now;
 			newValue.ModifiedAt = now;
 
 			try
@@ -213,7 +218,7 @@ namespace DataComponent.Repositories
 
 		public void ReplaceOneSync(object id, T newValue)
 		{
-			var now = System.DateTime.Now;
+			var now = DateTime.Now;
 			newValue.ModifiedAt = now;
 
 			try
@@ -237,7 +242,7 @@ namespace DataComponent.Repositories
 
 		public void ReplaceOneSync(Expression<Func<T, bool>> filter, T newValue)
 		{
-			var now = System.DateTime.Now;
+			var now = DateTime.Now;
 			newValue.ModifiedAt = now;
 
 			try

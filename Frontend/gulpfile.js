@@ -10,23 +10,26 @@ const source = require("vinyl-source-stream");
 const buffer = require("vinyl-buffer");
 
 const rename = require("gulp-rename");
-const uglify = require("gulp-uglify");
+const uglify = require("gulp-uglify-es").default;
 const sourcemaps = require("gulp-sourcemaps");
 
 const path = require("path");
 
 gulp.task('ts', gulp.series(() => {
   return browserify(path.join('.', 'Scripts', 'main.ts'), {
-      debug: true
-    })
+    debug: true
+  })
     .on('error', console.error.bind(console))
     .plugin(tsify, {
       target: "es6",
       module: "commonjs",
     })
     .transform('babelify', {
-      presets: ["@babel/preset-env"],
+      presets: ["@babel/preset-env", "@babel/preset-react"],
       extensions: ['.ts']
+    })
+    .on('error', (err) => {
+      console.log(err);
     })
     .bundle()
     .pipe(source('site.min.js'))
@@ -34,10 +37,9 @@ gulp.task('ts', gulp.series(() => {
     .pipe(sourcemaps.init({
       loadMaps: true
     }))
-    .pipe(uglify())
+    .pipe(uglify({}))
     .on('error', (err) => {
-      console.log(err.message);
-      console.log(err.annotated);
+      console.log(err);
     })
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(path.join('.', 'wwwroot', 'js')));

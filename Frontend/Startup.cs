@@ -1,11 +1,14 @@
 using DataComponent.Repositories;
 using DataComponent.Repositories.Interfaces;
+
 using Frontend.Services;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
 using MongoDB.Driver;
 
 namespace Frontend
@@ -29,9 +32,9 @@ namespace Frontend
 			services.AddControllersWithViews();
 			services.AddScoped<IViewRender, ViewRender>();
 
-			services.AddScoped<IMongoClient, MongoClient>(provider => new MongoClient(connectionString));
+			services.AddSingleton<IMongoClient, MongoClient>(provider => new MongoClient(connectionString));
 
-			services.AddScoped(provider =>
+			services.AddSingleton(provider =>
 			{
 				var service = (IMongoClient)provider.GetService(typeof(IMongoClient));
 				return service.GetDatabase(databaseName);

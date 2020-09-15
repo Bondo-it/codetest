@@ -49,14 +49,11 @@ namespace Frontend.Controllers
 		public JsonResult Delete(string id)
 		{
 			_userRepository.DeleteSync(x => x.Id == id);
-			return new JsonResult
-			(
-				new
-				{
-					success = true,
-					responseText = "User successfully deleted!"
-				}
-				);
+			return new JsonResult(new
+			{
+				success = true,
+				responseText = "User successfully deleted!"
+			});
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

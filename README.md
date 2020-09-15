@@ -50,18 +50,19 @@ In general, we want to have at least some code in the following three languages.
 
 Using any external library is allowed, the same goes for old code in your repository. Utilizing external libraries does have to be utilized for a good reason though.
 
-## Surggestions to the test
-### Web Components
-Web components are always preffered as its cross platform compatible, and are modular. If you could create one web component, it would be very much appreciated, even though it might be simple.
+## The test (Whats your task)
+### Basic CRUD operations
+Add basic CRUD oparations to the application.
 
-### Login
-Login functionality might be a great addition. We almost always need to implement login on our soulutions.
+### Web Components
+When doing frontend, we use web components so we can have reusable and framework agnostic code. We prefer you do components in "web components"
+Check *Frontend/Scripts/WebComponents/UserModal.component.ts* for inspiration on how to create web components.
 
 ### Improve layout (optional)
 The current layout is very simple, if you could improve it, it would be a big benefit.
 
 ### Improve logging (optional)
-logging can always be improved, see if you could add your touch to the logging.
+Logging can always be improved, see if you could add your touch to the logging.
 
 ### UnitTesting (optional)
 Unit testing could be a very nice addition to this project.
@@ -72,15 +73,3 @@ Unit testing could be a very nice addition to this project.
 - Extract your code to classes where a class or a function only have one specific purpose
 - Only write comments, if code is not self-explainatory(which it should be for the most part)
 - Try to write your own code. Importing libraries has to be for a good reason. We rate it very highly that you are able to write your own code
-- Remember logging. Any project without logging will never be production ready.
-
-# Write pretty code
-- We have some coding guidelines that we would like all our code to follow, it would be nice if you could read it, and follow it as much as you can.
-
-	- [The overall guidelines](https://github.com/luftborn-ivs/design-guide)
-
-	- [C#](https://github.com/luftborn-ivs/design-guide/blob/master/c%23/readme.md)
-
-	- [Javascript](https://github.com/luftborn-ivs/design-guide/blob/master/js/readme.md)
-
-	- [SCSS](https://github.com/luftborn-ivs/design-guide#styling)

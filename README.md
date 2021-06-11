@@ -2,8 +2,8 @@
 
 # Requirements
   - [Nodejs](https://nodejs.org/en/)
-  - [Dotnet core 3.1 Runtime](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-  - [Dotnet core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+  - [net 5.0 Runtime](https://dotnet.microsoft.com/download/dotnet/5.0)
+  - [net 5.0 SDK](https://dotnet.microsoft.com/download/dotnet/5.0)
 
 # Before we start
   - Clone repository

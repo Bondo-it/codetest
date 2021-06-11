@@ -21,7 +21,7 @@ dotnet run Frontend/Frontend.csproj
 ```
 
 # Gerneral information about the project
-The project is a standard dotnet core 3.1 MCV project.
+The project is a standard dotnet core 5.0 MCV project.
 
 No libraries are used in the javascript. We utilize Gulp to bundle and compile both the TypeScript and the SCSS.
 
